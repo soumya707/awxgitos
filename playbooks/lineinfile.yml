@@ -1,0 +1,13 @@
+---
+- name: Add line in file
+  hosts: all
+  become: true
+  become_user: root
+  
+  tasks:
+    - name: server.example.com in /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: '15.114.71.93 osanas3-64.swinfra.net osanas3-64'
+        state: present
+        
